@@ -1,0 +1,73 @@
+﻿@model SAT.Data.EF.ScheduledClass
+
+@{
+    ViewBag.Title = "Scheduled Class Details";
+}
+
+<h2 style="color:#f6e1c5; text-align:center;">@ViewBag.Title</h2>
+
+<div>
+
+    <dl class="dl-horizontal scheduledClassDetails">
+        <dt>
+            @Html.DisplayNameFor(model => model.InstructorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstructorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cours.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cours.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScheduledClassStatus.SCSName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScheduledClassStatus.SCSName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ScheduledClassID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

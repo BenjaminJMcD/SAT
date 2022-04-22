@@ -1,0 +1,32 @@
+﻿@model SAT.Data.EF.StudentStatus
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="color:#f6e1c5;">@ViewBag.Title</h2>
+
+<div>
+    <dl class="dl-horizontal" style="color:#f6e1c5;">
+        <dt>
+            @Html.DisplayNameFor(model => model.SSName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SSName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SSDecscription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SSDecscription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SSID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

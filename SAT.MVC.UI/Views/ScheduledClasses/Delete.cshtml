@@ -1,0 +1,81 @@
+﻿@model SAT.Data.EF.ScheduledClass
+
+@{
+    ViewBag.Title = "Delete Class";
+}
+
+<h2 style="color:#f6e1c5; text-align:center;">@ViewBag.Title</h2>
+
+
+<h3 style="color:#f6e1c5; text-align:center;">Are you sure you want to delete this?</h3>
+<div>
+
+    <dl class="dl-horizontal scheduledClassDetails">
+        <dt>
+            @Html.DisplayNameFor(model => model.InstructorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstructorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cours.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cours.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScheduledClassStatus.SCSName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScheduledClassStatus.SCSName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color justify-content-center">
+            <input type="submit" value="Delete" class="btn btn-dark" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

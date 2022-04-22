@@ -1,0 +1,35 @@
+﻿@model IEnumerable<SAT.Data.EF.StudentStatus>
+
+@{
+    ViewBag.Title = "Student Status Tiles";
+}
+
+<h2 style="color:#f6e1c5;">@ViewBag.Title</h2>
+
+@Html.AntiForgeryToken()
+<p style="text-align:center;">
+    @Html.ActionLink("Create New", "Create")
+
+    <button class="btn btn-success" style="float:right">@Html.ActionLink("Table View", "Index")</button>
+</p>
+
+<div class="row" style="padding-left:7.5em;">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 justify-content-center" style="margin-bottom:4em;">
+            <div class="card" style="width:299px; height:220px;">
+                <div class="container">
+                    <h4 style="text-align:center;">@item.SSName</h4>
+                    <hr />
+                    <h5 style="text-align:center;">@item.SSDecscription</h5>
+                </div>
+                <div style="padding-left:3em; padding-bottom:1em;">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SSID })
+                    @Html.ActionLink("Details", "Details", new { id = item.SSID }, new { @style = "padding-left:2em;" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SSID }, new { @style = "padding-left:2em;" })
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

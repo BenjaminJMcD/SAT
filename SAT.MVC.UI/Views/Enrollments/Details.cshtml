@@ -1,0 +1,49 @@
+﻿@model SAT.Data.EF.Enrollment
+
+@{
+    ViewBag.Title = "Enrollment Details";
+}
+
+<h2 style="color:#f6e1c5; text-align:center;">@ViewBag.Title</h2>
+
+<div>
+
+    <dl class="dl-horizontal enrollmentsDetails">
+        <dt>
+            @Html.DisplayNameFor(model => model.EnrollmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnrollmentDate)
+        </dd>
+
+        <dt>
+            Course
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScheduledClass.Cours.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScheduledClass.InstructorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScheduledClass.InstructorName)
+        </dd>
+
+        <dt>
+            Student
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.FullName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EnrollmentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

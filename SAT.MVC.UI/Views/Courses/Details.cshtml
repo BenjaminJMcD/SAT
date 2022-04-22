@@ -1,0 +1,42 @@
+﻿@model SAT.Data.EF.Course
+
+@{
+    ViewBag.Title = "Course Details";
+}
+
+<h2 style="color:#f6e1c5; text-align:center;">@ViewBag.Title</h2>
+
+<div style="text-align:center;">
+    @*<h4>Course</h4>
+    <hr />*@
+    <dl class="dl-horizontal courseDetails">
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreditHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreditHours)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CourseID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

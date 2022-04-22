@@ -1,0 +1,70 @@
+﻿@model SAT.MVC.UI.Models.ContactViewModel
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+<section class="page-section about-heading">
+    <div class="container">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="~/Content/assets/img/throwingcaps.jpg" alt="..." />
+        <div class="about-heading-content">
+            <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                    <div class="bg-faded rounded p-5">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">Funks Music</span>
+                            <span class="section-heading-lower">Enroll Now</span>
+                        </h2>
+                        <section id="contact" class="contact">
+                            <div class="container" data-aos="fade-up">
+
+                                <div class="row mt-5">
+
+                                    <div class="col-lg-12 mt-5 mt-lg-0">
+
+                                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                                            <div class="row">
+                                                <div class="col-md-6 form-group">
+                                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Name" } })
+                                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                                </div>
+                                                <div class="col-md-6 form-group mt-3 mt-md-0">
+                                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+                                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control", @placeholder = "Subject" } })
+                                                @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", @placeholder = "Message" } })
+                                                @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="text-center">
+                                                <input type="submit" value="Send Message" class="button" />
+                                            </div>
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
